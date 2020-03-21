@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-            return null;
+            return "Download Completed";
         }
 
 
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String s) {
-            Log.d(TAG, "onPostExecute: ");
+            Log.d(TAG, "onPostExecute: "+s);
         }
     }
 }
