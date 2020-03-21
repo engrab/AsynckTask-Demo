@@ -48,6 +48,11 @@ public class MainActivity extends AppCompatActivity {
         protected String doInBackground(String... strings) {
 
             for (String color: strings) {
+                
+                if (color.contains("Green")){
+                    cancel(true);
+                    break;
+                }
 
                 try {
                     Thread.sleep(2000);
@@ -69,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             Log.d(TAG, "onPostExecute: "+s);
+        }
+        @Override
+        protected void onCancelled() {
+            Log.d(TAG, "onCancelled: is called");
         }
     }
 }
