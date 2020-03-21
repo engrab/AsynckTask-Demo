@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     Thread.sleep(2000);
                     Log.d(TAG, "doInBackground: " + color);
+                    publishProgress(color);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onProgressUpdate(String... values) {
-            Log.d(TAG, "onProgressUpdate: ");
+            Log.d(TAG, "onProgressUpdate: " +values[0]);
         }
 
         @Override
